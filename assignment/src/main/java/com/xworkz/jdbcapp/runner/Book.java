@@ -14,17 +14,17 @@ public class Book {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 System.out.println("drive loaded sucessfully");
 
-                String url = "jdbc:mysql://127.0.0.1:3306/Country";
+                String url = "jdbc:mysql://127.0.0.1:3306/book";
                 String userName = "root";
                 String password = "2002";
                 connection=DriverManager.getConnection(url, userName, password);
                 System.out.println("connected sucessfully");
 
-                String insert = "insert in to book_info values(1,'classamte','50')";
-                String insert1 = "insert in to book_info values(2,'bafna gold','50')";
-                String insert2 = "insert in to book_info values(3,'classamte1','23')";
-                String insert3 = "insert in to book_info values(4,'rebook','35')";
-                String insert4 = "insert in to book_info values(5,'lekhak','15')";
+                String insert = "insert into book_info values(1,'classamte','50')";
+                String insert1 = "insert into book_info values(2,'bafna gold','50')";
+                String insert2 = "insert into book_info values(3,'classamte1','23')";
+                String insert3 = "insert into book_info values(4,'rebook','35')";
+                String insert4 = "insert into book_info values(5,'lekhak','15')";
 
 
                 Statement statement = connection.createStatement();
