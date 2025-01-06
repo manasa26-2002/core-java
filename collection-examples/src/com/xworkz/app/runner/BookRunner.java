@@ -1,23 +1,19 @@
 package com.xworkz.app.runner;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class BookRunner {
 
         public static void main(String[] args) {
 
-            Book book = new Book();
-            book.setBookId(1);
-            book.setBookName("good times");
-            book.setLanguage("english");
-            book.setAuthorName("thomas");
-            book.setPrice(5789.9);
+            List<Book> collection = new ArrayList();
+            collection.add(new Book(1,"good times",598,"thomas","english"));
+            collection.add(new Book(3,"Harry potter",287,"john","english"));
 
+            Collections.sort(collection);
 
-            Collection collection = new ArrayList();
-            collection.add(book);
-
-            System.out.println(collection);
+            System.out.println(collection.stream().sorted(Comparator.comparing(Book::getPrice))
+                    .collect(Collectors.toList()));
         }
 }

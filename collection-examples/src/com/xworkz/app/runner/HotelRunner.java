@@ -1,20 +1,24 @@
 package com.xworkz.app.runner;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class HotelRunner {
     public static void main(String[] args) {
 
-        Hotel hotel = new Hotel();
-        hotel.setHotelId(45);
-        hotel.setHotelName("taj");
-        hotel.setPlace("mumbai");
 
-        Collection collection =new ArrayList();
-        collection.add(hotel);
+        List collection =new ArrayList();
+        collection.add(new Hotel(3,"Taj","mumbai"));
+        collection.add(new Hotel(6,"polas","gujrat"));
+        collection.add(new Hotel(4,"Bala recengency","ballari"));
+        collection.add(new Hotel(7,"Radission","Bengaluru"));
+        collection.add(new Hotel(12,"rasotsav","Bengaluru"));
+        collection.add(new Hotel(10,"Bageecha","gujrat"));
 
-        System.out.println(collection);
+        Collections.sort(collection);
 
+
+        System.out.println(collection.stream().sorted(Comparator.comparing(Hotel::getHotelId)).
+                collect(Collectors.toList()));
     }
 }

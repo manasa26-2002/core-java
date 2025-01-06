@@ -1,7 +1,6 @@
 package com.xworkz.app.runner;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.*;
 
 public class IntRunner {
     public static void main(String[] args) {
@@ -16,7 +15,7 @@ public class IntRunner {
         collection.add(123);
         collection.add(150);
 
-       collection.add(collection);
+       //collection.add(collection);
        // collection.remove(100);
        // collection.clear();
         //collection.removeAll(collection);

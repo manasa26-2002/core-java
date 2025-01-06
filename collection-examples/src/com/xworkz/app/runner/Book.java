@@ -1,5 +1,6 @@
 package com.xworkz.app.runner;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -7,15 +8,18 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Book {
+@AllArgsConstructor
+public class Book implements Comparable<Book> {
 
         private int bookId;
         private String bookName;
-        private double price;
+        private int price;
         private String authorName;
         private String language;
 
-        //public Book(){
 
-       // }
+        @Override
+        public int compareTo(Book o) {
+                return this.getAuthorName() .compareTo(o.getAuthorName());
+        }
 }
